@@ -1,35 +1,43 @@
-# 基于Whittle指数策略的 AoI 状态更新仿真系统
+# AOI State Update Simulation with Whittle Index Scheduling
 
-## 项目介绍
-本项目面向网络监测场景，研究目标不是最小化传输时延，而是最小化加权信息年龄（Weighted AoI）。
-系统采用单台节点、多类监控量、单跳状态更新、离散时隙建模，并逐步实现：
+## Description
+This project studies status update scheduling for network monitoring scenarios with a focus on minimizing Weighted Age of Information (Weighted AoI), rather than transmission delay alone.
 
-1. 基础 AoI 仿真环境
-2. 多种基线调度策略
-3. 单类平均成本 MDP
-4. 阈值结构验证
-5. 拉格朗日松弛与 Whittle 指数调度
-6. 标准对比实验与扩展敏感性实验
+The repository implements a complete simulation and experiment pipeline for:
 
-## 目录说明
+1. Basic AoI environment modeling
+2. Multiple online baseline schedulers
+3. Single-arm average-cost MDP analysis
+4. Threshold-structure verification
+5. Lagrangian relaxation and Whittle index scheduling
+6. Standard comparison experiments and extended sensitivity studies
+
+The current codebase models a single MEC node, multiple monitored sources, single-hop status updates, and a discrete-time slotted system where at most one source is scheduled in each slot.
+
+## Repository Structure
+
 ```text
 AOITest/
-├─ algorithms/              # 调度策略：RoundRobin / Periodic / Greedy / Random / Whittle
-├─ config/                  # JSON/YAML 配置文件
-├─ env/                     # 仿真环境：Source / Channel / AoIEnv
-├─ experiments/             # 单项实验脚本与实验辅助模块
-├─ results/                 # 实验结果、CSV、图表
-├─ solver/                  # 单类 MDP、阈值分析、拉格朗日松弛
-├─ tests/                   # 基础单元测试
-├─ tools/                   # README 生成等工程脚本
-├─ utils/                   # 指标统计、绘图、日志
-├─ main.py                  # 单场景快速运行入口
-├─ runner.py                # 标准对比实验入口
-└─ run_all.py               # 一键复现全部核心实验
+|-- algorithms/    Scheduling policies: Round Robin / Periodic / Greedy / Random / Whittle
+|-- config/        JSON configuration files for experiments
+|-- docs/          Method notes, experiment design, and result analysis
+|-- env/           Simulation environment: Source / Channel / AoIEnv
+|-- experiments/   Standalone experiment scripts and helpers
+|-- results/       Generated CSV files, plots, and reports
+|-- solver/        Single-arm MDP, threshold analysis, and Lagrangian tools
+|-- tests/         Basic unit tests
+|-- tools/         Utility scripts such as README generation
+|-- utils/         Metrics, plotting, and logging helpers
+|-- main.py        Quick entry point for a single scenario
+|-- runner.py      Standard and extended experiment runner
+`-- run_all.py     One-command pipeline for core reproduction
 ```
 
-## 环境依赖
-推荐 Python 3.11+。核心依赖如下：
+## Environment Requirements
+
+Recommended Python version: 3.11+
+
+Core dependencies:
 
 ```text
 numpy
@@ -37,7 +45,7 @@ pandas
 matplotlib
 ```
 
-若使用虚拟环境，可执行：
+Install dependencies with a virtual environment if needed:
 
 ```bash
 python -m venv venv
@@ -45,66 +53,120 @@ venv\Scripts\activate
 pip install -r requirements.txt
 ```
 
-## 运行方式
-### 1. 单场景策略运行
+## Quick Start
+
+### 1. Run a single strategy in the demo scenario
+
 ```bash
 python main.py --strategy all
 python main.py --strategy whittle
 ```
 
-### 2. 标准论文主实验
+Available strategy names:
+
+- `all`
+- `round_robin`
+- `periodic`
+- `greedy`
+- `random`
+- `whittle`
+
+### 2. Run the standard comparison suite
+
 ```bash
 python runner.py --suite standard --config config/runner_default.json
 ```
 
-### 3. 扩展敏感性实验
+### 3. Run the extended sensitivity suite
+
 ```bash
 python runner.py --suite extended
 ```
 
-### 4. 一键复现全部核心实验
+### 4. Reproduce the core pipeline in one command
+
 ```bash
 python run_all.py --config config/run_all_default.json
 ```
 
-### 5. 单类 MDP 与阈值验证
+### 5. Run the single-arm MDP experiment
+
 ```bash
 python experiments/exp_single_arm_mdp.py --lambda-value 8.0
 ```
 
-### 6. Whittle 与 Greedy 决策差异示例
+### 6. Compare Whittle and Greedy decisions
+
 ```bash
 python experiments/exp_whittle_demo.py
 ```
 
-### 7. 运行基础测试
+### 7. Run basic tests
+
 ```bash
 python -m unittest discover -s tests -v
 ```
 
-## 实验复现步骤
-1. 创建并激活 Python 虚拟环境
-2. 安装依赖 `pip install -r requirements.txt`
-3. 执行 `python run_all.py --config config/run_all_default.json`
-4. 查看 `results/` 下自动生成的图表与 CSV
-5. 若只复现实验主表，可执行 `python runner.py --suite standard`
-6. 若复现扩展实验，可执行 `python runner.py --suite extended`
+## Reproduction Workflow
 
-## 结果文件命名规范
-图表与表格命名遵循以下原则：
+1. Create and activate a Python virtual environment.
+2. Install dependencies with `pip install -r requirements.txt`.
+3. Run `python run_all.py --config config/run_all_default.json`.
+4. Inspect generated CSV files and plots under `results/`.
+5. Run `python runner.py --suite standard` if you only need the main comparison tables.
+6. Run `python runner.py --suite extended` if you also want the sensitivity experiments.
 
-- 图：`fig_<experiment>_<metric>_<suffix>.png`
-- 表：`table_<experiment>_<content>.csv`
-- 轨迹：`trajectory_<scenario>_<strategy>_<run>.csv`
+## Output and Results
 
-示例：
-- `fig_scalability_avg_weighted_aoi_vs_N.png`
-- `table_standard_summary_aggregated.csv`
-- `trajectory_N5_hetero_whittle_run0.csv`
+Typical outputs include:
 
-## 工程说明
-- 所有实验均优先通过配置文件管理参数
-- 所有策略均实现统一调度接口
-- 所有指标计算统一走 `utils/metrics.py`
-- 所有图表输出统一走 `utils/plotter.py`
-- 所有扩展实验可通过 `runner.py --suite extended` 串行运行
+- Per-run metrics in CSV format
+- Aggregated summary tables
+- AoI trajectory data
+- Comparison figures for Weighted AoI and high-priority sources
+- Sensitivity-study results for scale, weights, channel quality, and peak AoI
+
+Important output locations:
+
+- `results/runner_default/`
+- `results/runner_final/`
+- `results/final_extended_suite/`
+- `results/single_arm_mdp/`
+- `results/exp_compare/`
+
+## Method Overview
+
+The project is built around a unified AoI optimization objective:
+
+```text
+C(t) = sum_i w_i * A_i(t)
+```
+
+Where:
+
+- `w_i` is the priority weight of source `i`
+- `A_i(t)` is the AoI of source `i` at slot `t`
+
+Implemented scheduling policies include:
+
+1. Round Robin
+2. Periodic
+3. Greedy
+4. Random
+5. Whittle Index
+
+The Whittle-based scheduler is the main method of interest and is supported by single-arm MDP modeling, threshold verification, and Lagrangian relaxation modules in `solver/`.
+
+## Notes
+
+- Experiment parameters are primarily managed through JSON config files in `config/`.
+- Metrics are centralized in `utils/metrics.py`.
+- Plot generation is centralized in `utils/plotter.py`.
+- Standard and extended suites share the same environment and metric definitions for fair comparison.
+
+## Contribution
+
+1. Fork the repository.
+2. Create a feature branch.
+3. Commit your changes.
+4. Open a pull request.
