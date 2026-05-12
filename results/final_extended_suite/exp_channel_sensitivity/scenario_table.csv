@@ -1,0 +1,4 @@
+experiment_name,scenario_name,N,T,num_runs,weights,sampling_rates,channel_success_probs
+channel_sensitivity,uniform,5,3000,10,"[1.0, 1.5, 2.0, 3.0, 5.0]","[0.95, 0.92, 0.88, 0.84, 0.8]","[0.85, 0.85, 0.85, 0.85, 0.85]"
+channel_sensitivity,mild_hetero,5,3000,10,"[1.0, 1.5, 2.0, 3.0, 5.0]","[0.95, 0.92, 0.88, 0.84, 0.8]","[0.92, 0.88, 0.84, 0.78, 0.72]"
+channel_sensitivity,strong_hetero,5,3000,10,"[1.0, 1.5, 2.0, 3.0, 5.0]","[0.95, 0.92, 0.88, 0.84, 0.8]","[0.95, 0.88, 0.76, 0.62, 0.48]"

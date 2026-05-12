@@ -1,0 +1,4 @@
+Peak AoI Conclusion Template
+1. Under stressed conditions, the peak AoI of baseline strategies [increases substantially / becomes unstable], indicating higher risk of stale information.
+2. Whittle maintains [lower / better controlled] system peak AoI and peak weighted AoI, showing stronger protection against extreme information aging.
+3. These results indicate that the proposed policy is advantageous not only in average performance but also in worst-case freshness control.

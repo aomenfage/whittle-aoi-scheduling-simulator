@@ -1,0 +1,30 @@
+{
+  "output_dir": "results/runner_final",
+  "num_runs": 10,
+  "T": 5000,
+  "seed": 2026,
+  "strategies": ["whittle", "round_robin", "periodic", "greedy", "random"],
+  "scenarios": [
+    {
+      "name": "N3_demo_final",
+      "N": 3,
+      "weights": [1.0, 2.0, 3.0],
+      "sampling_rates": [0.95, 0.85, 0.75],
+      "channel_success_probs": [0.9, 0.8, 0.7]
+    },
+    {
+      "name": "N5_hetero_final",
+      "N": 5,
+      "weights": [1.0, 1.5, 2.0, 3.0, 5.0],
+      "sampling_rates": [0.95, 0.9, 0.85, 0.8, 0.75],
+      "channel_success_probs": [0.92, 0.88, 0.84, 0.78, 0.7]
+    },
+    {
+      "name": "N8_hetero_final",
+      "N": 8,
+      "weights": [1.0, 1.2, 1.5, 2.0, 2.5, 3.0, 4.0, 6.0],
+      "sampling_rates": [0.95, 0.93, 0.9, 0.88, 0.85, 0.82, 0.78, 0.75],
+      "channel_success_probs": [0.95, 0.92, 0.9, 0.88, 0.85, 0.82, 0.78, 0.72]
+    }
+  ]
+}

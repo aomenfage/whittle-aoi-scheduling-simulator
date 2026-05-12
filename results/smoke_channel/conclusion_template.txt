@@ -1,0 +1,4 @@
+Channel Heterogeneity Conclusion Template
+1. As link heterogeneity becomes stronger, the weighted AoI of all strategies [increases / degrades], but Whittle remains [the best / competitive].
+2. The proposed policy better captures source-dependent success probabilities, resulting in [lower / more stable] AoI under heterogeneous links.
+3. The results support the robustness of Whittle scheduling in realistic railway monitoring networks with non-uniform transmission reliability.

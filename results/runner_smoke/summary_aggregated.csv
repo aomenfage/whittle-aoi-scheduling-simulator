@@ -1,0 +1,6 @@
+scenario_name,strategy,slots_mean,average_weighted_aoi_mean,peak_weighted_aoi_mean,avg_aoi_0_mean,peak_aoi_0_mean,weight_0_mean,avg_aoi_1_mean,peak_aoi_1_mean,weight_1_mean,avg_aoi_2_mean,peak_aoi_2_mean,weight_2_mean,system_peak_aoi_mean,high_weight_threshold_mean,high_weight_avg_aoi_mean,slots_std,average_weighted_aoi_std,peak_weighted_aoi_std,avg_aoi_0_std,peak_aoi_0_std,weight_0_std,avg_aoi_1_std,peak_aoi_1_std,weight_1_std,avg_aoi_2_std,peak_aoi_2_std,weight_2_std,system_peak_aoi_std,high_weight_threshold_std,high_weight_avg_aoi_std
+N3_demo_smoke,greedy,80.0,17.7375,35.0,4.675,11.0,1.0,3.0625,8.0,2.0,2.3125,6.0,3.0,11.0,2.0,2.6875,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+N3_demo_smoke,periodic,80.0,20.375,47.0,4.35,12.0,1.0,3.325,11.0,2.0,3.125,12.0,3.0,12.0,2.0,3.225,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+N3_demo_smoke,random,80.0,25.4125,50.0,3.5,12.0,1.0,4.6,18.0,2.0,4.2375,12.0,3.0,18.0,2.0,4.418749999999999,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+N3_demo_smoke,round_robin,80.0,21.6375,49.0,2.2875,6.0,1.0,3.1125,9.0,2.0,4.375,15.0,3.0,15.0,2.0,3.74375,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0
+N3_demo_smoke,whittle,80.0,16.3125,31.0,3.1125,8.0,1.0,2.625,6.0,2.0,2.65,6.0,3.0,8.0,2.0,2.6375,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0

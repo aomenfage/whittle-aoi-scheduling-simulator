@@ -1,0 +1,4 @@
+Weight Sensitivity Conclusion Template
+1. As the high-priority weight increases, the average AoI of the critical source under Whittle [decreases / remains lower than baselines].
+2. Compared with Greedy and periodic baselines, Whittle provides [better / more stable] protection for critical monitoring traffic.
+3. The weighted AoI results suggest that the proposed policy is more robust when system priorities become highly skewed.

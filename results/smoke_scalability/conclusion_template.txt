@@ -1,0 +1,5 @@
+Scalability Conclusion Template
+1. As N increases from 5 to 10, 20, and 50, the average weighted AoI of each strategy [increases / remains stable / degrades slowly].
+2. Whittle shows [the best / competitive] weighted AoI performance under all tested scales.
+3. In terms of complexity, the average decision time of Whittle is [higher than / comparable to] simple baselines, but remains within [acceptable / practical] online scheduling latency.
+4. The overall runtime trend indicates that the proposed method is [scalable / suitable] for larger source populations in the considered MEC monitoring system.

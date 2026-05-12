@@ -1,0 +1,5 @@
+strategy,slots,average_weighted_aoi,peak_weighted_aoi,avg_aoi_0,peak_aoi_0,weight_0,avg_aoi_1,peak_aoi_1,weight_1,avg_aoi_2,peak_aoi_2,weight_2,system_peak_aoi,high_weight_threshold,high_weight_avg_aoi
+greedy,1000,19.959,68.0,5.006,23.0,1.0,3.446,13.0,2.0,2.687,11.0,3.0,23.0,2.0,3.0665
+round_robin,1000,24.671,88.0,2.557,12.0,1.0,3.755,24.0,2.0,4.868,24.0,3.0,24.0,2.0,4.3115000000000006
+periodic,1000,28.69,114.0,3.412,20.0,1.0,2.472,12.0,2.0,6.778,32.0,3.0,32.0,2.0,4.625
+random,1000,31.259,132.0,3.587,15.0,1.0,4.008,22.0,2.0,6.552,39.0,3.0,39.0,2.0,5.279999999999999

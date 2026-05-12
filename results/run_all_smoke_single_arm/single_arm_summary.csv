@@ -1,0 +1,2 @@
+weight,success_prob,lambda_value,a_max,average_cost,iterations,converged,has_threshold_structure,threshold_state,passive_prefix_length,action_switch_count
+2.0,0.8,4.0,12,1.6111110826134762,102,1,True,2,1,1
